@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Returning to MDLIntegration…</title>
+  <style>
+    body { font-family: -apple-system, Roboto, sans-serif; text-align: center; padding: 48px 20px; color: #222; }
+    h2 { color: #006847; }
+    a.btn { display: inline-block; margin-top: 24px; padding: 12px 24px;
+            background: #006847; color: #fff; text-decoration: none; border-radius: 8px; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <h2>Verification complete</h2>
+  <p>Returning you to the app…</p>
+  <a class="btn" id="back" href="mdlintegration://docv/complete">Return to app</a>
+  <script>
+    (function () {
+      var deep = 'mdlintegration://docv/complete';
+      // Chrome launches apps most reliably via the intent: URL syntax.
+      var intent = 'intent://docv/complete#Intent;scheme=mdlintegration;package=com.mdlintegration;end';
+      var target = /Chrome/i.test(navigator.userAgent || '') ? intent : deep;
+      window.location.replace(target);
+    })();
+  </script>
+</body>
+</html>
